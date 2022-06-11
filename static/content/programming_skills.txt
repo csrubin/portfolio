@@ -1,0 +1,17 @@
+Python
+Bash
+C/C++
+MATLAB
+Git/Github
+Jenkins
+CI/CD
+Scripting
+OOP
+Data manipulation (exploration, analysis, visualization)
+ETL
+SQL
+MongoDB
+Pandas
+Numpy
+Dash
+Dask

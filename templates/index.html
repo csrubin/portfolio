@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ayush Kalla</title>
+    <title>Connor Rubin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/static/css/font-awesome.min.css" rel="stylesheet">
@@ -23,10 +23,9 @@
   </head>
   <body id="top">
     <header>
-      <div class="profile-page sidebar-collapse">
+      <class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
           <div class="container">
-           
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
@@ -34,29 +33,28 @@
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
               </ul>
             </div>
-          </div>
         </nav>
-      </div>
     </header>
     <div class="page-content">
       <div>
 <div class="profile-page">
   <div class="wrapper">
     <div class="page-header page-header-small" filter-color="green">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('static/images/cc-bg-1.jpg')"></div>
+      <div class="page-header-image" data-parallax="true" style="background-image: url('static/images/banner.jpeg')"></div>
       <div class="container">
         <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="static/images/43181031.png" alt="Image"/></a></div>
-          <div class="h2 title">Ayush Kalla</div>
-          <p class="category text-white">Data Scientist</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='Resume_Ayush_Kalla.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <div class="cc-profile-image"><a href="#"><img src="static/images/profile.png" alt="Image"/></a></div>
+          <div class="h2 title">Connor Rubin</div>
+          <p class="category text-white">Technical Product Manager</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='Rubin_Connor_4_25_2022.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
         </div>
       </div>
       <div class="section">
         <div class="container">
-          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" target = "_blank" href="https://www.facebook.com/ayush.kalla/" rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href="https://twitter.com/KallaAyush" rel="tooltip" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href="https://github.com/akalla123" rel="tooltip" title="Follow me on Github"><i class="fa fa-github"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href="https://www.linkedin.com/in/ayushkalla/" rel="tooltip" title="Follow me on LinkedIn"><i class="fa fa-linkedin"></i></a></div>
+          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href={{linked_in}} rel="tooltip" title="Connect with me on LinkedIn"><i class="fa fa-linkedin"></i></a></div>
         </div>
       </div>
     </div>
@@ -69,31 +67,24 @@
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">About</div>
-            <p>Data Scientist who likes to solve problems using code. Proficient in the field of statistics, specifically Machine Learning and Artificial Intelligence. Other interests include building Computer Vision and TimeSeries Models, Data Visualization and Sales & Profit Forecasting</p>
+            <p>{{ about }} </p>
             </div>
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">Basic Information</div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">24</div>
-            </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">akalla@stevens.edu</div>
+              <div class="col-sm-8">{{ email }}</div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-              <div class="col-sm-8">+1646-577-8976</div>
+              <div class="col-sm-8">{{ phone }}</div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
-              <div class="col-sm-8">Hoboken, New Jersey, U.S.A</div>
+              <div class="col-sm-8">{{ address }}</div>
             </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8">English, Hindi</div>
             </div>
           </div>
         </div>
@@ -106,10 +97,9 @@
     <div class="h4 text-center mb-4 title">Professional Skills</div>
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
-        <b>Programming Languages:</b> Python, R, SQL, JavaScript<br><br>
-        <b>Tools:</b> Scikit-Learn, NumPy, Pandas, Matplotlib, Tableau, MS Excel, OpenCV, Keras, Tensorflow<br><br>
-        <b>Database Management Systems:</b> MySQL, SQLite3<br><br>
-        <b>Internet Technologies:</b> Flask, HTML5, CSS, XML, jQuer
+        <b>Programming:</b> {{ programming_skills }} <br><br>
+        <b>Engineering:</b> {{ engineering_skills}}<br><br>
+        <b>Other:</b> {{ other_skills }}<br><br>
       </div>
     </div>
   </div>
@@ -128,18 +118,12 @@
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Data Scientist</div>
+            <div class="h5">Product Manager</div>
             <p>
               <ul>
-                <li>Delivered Model Risk Management Dashboards to track model performance post deployment for a lending client.</li>  
-                <li>Working on building code, enhanced templates and defining a best practice for one of the key milestones of XAI model 
-                  development process of Credit risk management models of MATRiX.</li>
-                <li>Built AI based time-series forecasting models to perform demand forecasting of inventory. Used various approaches of AI 
-                  Long short-term memory (LSTM), Spline regression, ARIMA, Holt-Winter and multi dimensional macroeconomic model 
-                  adjusted predictions for a retail company client.</li>
-                <li>Working on developing a deep learning solution for a retail client to determine the composition of products using images. 
-                  Used algorithms such as Convolutional Neural Network and Masked RCNN</li>
-                <li>Built budget, cashflow and monthly sales and purchase monitoring Tableau dashboards for retail clients</li>
+                {% for element in tpm_list %}
+                <li>{{element}}</li>
+                {% endfor %}
               </ul>
               </p>
           </div>
@@ -156,7 +140,7 @@
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Data Scientist Intern</div>
+            <div class="h5">Technical Product Manager Intern</div>
             <p>
               <ul>
                 <li>Built suite of AI based revenue and balance models for one of the major banking client.</li>  
@@ -324,8 +308,8 @@
 </div></div>
     </div>
     <footer class="footer">
-      <div class="container text-center"><a class="cc-facebook btn btn-link" target="_blank" href="https://www.facebook.com/ayush.kalla/"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " target="_blank" href="https://twitter.com/KallaAyush"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" target="_blank" href="https://github.com/akalla123"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" target="_blank" href="https://www.linkedin.com/in/ayushkalla/"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a></div>
-      <div class="h4 title text-center">Ayush Kalla</div>
+      <div class="container text-center"><a class="cc-instagram btn btn-link" target="_blank" href={{linked_in}}><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a></div>
+      <div class="h4 title text-center">Connor Rubin</div>
       <div class="text-center text-muted">
         <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
       </div>

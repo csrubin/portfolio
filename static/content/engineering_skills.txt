@@ -1,0 +1,16 @@
+Prototyping
+Multimeter
+Oscilloscope
+Soldering
+Microcontrollers
+I2C
+SPI
+UART
+WiFi
+MQTT
+GPS/GNSS
+IMU
+Sensor Fusion
+SolidWorks
+Fusion360
+LabVIEW
