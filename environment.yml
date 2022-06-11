@@ -3,22 +3,22 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - bzip2=1.0.8=h620ffc9_4
-  - ca-certificates=2022.4.26=hca03da5_0
-  - dataclasses=0.8=pyh6d0b6a4_7
-  - libcxx=12.0.0=hf6beb65_1
-  - libffi=3.4.2=hc377ac9_2
-  - ncurses=6.3=h1a28f6b_2
-  - openssl=1.1.1o=h1a28f6b_0
-  - python=3.10.4=hbdb9e5c_0
-  - readline=8.1.2=h1a28f6b_1
-  - sqlite=3.38.3=h1058600_0
-  - tk=8.6.12=hb8d0fd4_0
-  - toml=0.10.2=pyhd3eb1b0_0
-  - tzdata=2022a=hda174b7_0
-  - wheel=0.37.1=pyhd3eb1b0_0
-  - xz=5.2.5=h1a28f6b_1
-  - zlib=1.2.12=h5a0b063_2
+  - bzip2=1.0.8
+  - ca-certificates=2022.4.26
+  - dataclasses=0.8
+  - libcxx=12.0.0
+  - libffi=3.4.2
+  - ncurses=6.3
+  - openssl=1.1.1o
+  - python=3.10.4
+  - readline=8.1.2
+  - sqlite=3.38.3
+  - tk=8.6.12
+  - toml=0.10.2
+  - tzdata=2022a
+  - wheel=0.37.1
+  - xz=5.2.5
+  - zlib=1.2.12
   - pip:
     - certifi==2022.5.18.1
     - click==8.0.4
