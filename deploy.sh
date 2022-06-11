@@ -11,3 +11,4 @@ git commit -m "$message"
 
 # Deploy to Heroku
 git push heroku main
+heroku open

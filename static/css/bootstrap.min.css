@@ -3645,6 +3645,11 @@ tbody.collapse.show {
 }
 
 .card-body {
+    display: flex
+    justify-content: center
+    align-content: center;
+    flex-direction: column;
+    vertical-align: center
     flex: 1 1 auto;
     padding: 1.25rem
 }
@@ -3681,6 +3686,11 @@ tbody.collapse.show {
 }
 
 .card-header {
+    display: flex
+    justify-content: center
+    align-content: center;
+    flex-direction: column;
+    vertical-align: center
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, .03);

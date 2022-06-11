@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Connor Rubin</title>
+    <title>{{ name }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/static/css/font-awesome.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
   </head>
   <body id="top">
     <header>
-      <class="profile-page sidebar-collapse">
+      <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
           <div class="container">
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
@@ -38,18 +38,19 @@
               </ul>
             </div>
         </nav>
+      </div>
     </header>
     <div class="page-content">
       <div>
 <div class="profile-page">
   <div class="wrapper">
-    <div class="page-header page-header-small" filter-color="green">
+    <div class="page-header page-header-small">
       <div class="page-header-image" data-parallax="true" style="background-image: url('static/images/banner.jpeg')"></div>
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="static/images/profile.png" alt="Image"/></a></div>
-          <div class="h2 title">Connor Rubin</div>
-          <p class="category text-white">Technical Product Manager</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='Rubin_Connor_4_25_2022.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <div class="h2 title">{{ name }}</div>
+          <p class="category text-white">{{ title }}</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='Rubin_Connor_4_25_2022.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
         </div>
       </div>
       <div class="section">
@@ -66,8 +67,8 @@
       <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
-            <div class="h4 mt-0 title">About</div>
-            <p>{{ about }} </p>
+            <div class="h4 mt-0 title">About Me</div>
+            <p>{{ about_me }} </p>
             </div>
         </div>
         <div class="col-lg-6 col-md-12">
@@ -108,77 +109,29 @@
 <div class="section" id="experience">
   <div class="container cc-experience">
     <div class="h4 text-center mb-4 title">Work Experience</div>
+    {% for exp in experience %}
     <div class="card">
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-experience-header">
-            <p>June 2020 - Present</p>
-            <div class="h5">MATRiX ANALYTiCS CORPORATION</div>
+            <div class="h5">{{ exp['company'] }}</div>
+            <p>{{ exp['start'].strftime("%b %Y") }} - {{ exp['end'].strftime("%b %Y") }} </p>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Product Manager</div>
-            <p>
+            <div class="h5">{{ exp['title'] }}</div>
               <ul>
-                {% for element in tpm_list %}
-                <li>{{element}}</li>
+                {% for item in exp['work_items'] %}
+                <li>{{ item }}</li>
                 {% endfor %}
               </ul>
-              </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>June 2019 - April 2020</p>
-            <div class="h5">MATRiX ANALYTiCS CORPORATION</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Technical Product Manager Intern</div>
-            <p>
-              <ul>
-                <li>Built suite of AI based revenue and balance models for one of the major banking client.</li>  
-                <li>Automated the task of Exploratory Data Analysis by writing a Python Script to perform analysis on any given dataset.</li>
-                <li>Developed front-end forms for clients to get user-input and run Machine Learning models for the client using JavaScript.</li>
-                <li>Built Dashboards using IoT data from sensors for a retail client.</li>
-                <li>Built budget, cashflow and monthly sales and purchase monitoring Tableau dashboards for retail clients</li>
-                <li>Automated the task of data processing by performing Exclusion Analysis by preparing a general template to work for any type 
-                  of incoming data.</li>
-              </ul>
-              </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>September 2017 - December 2017</p>
-            <div class="h5">Central Drug Research Institute</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Research Intern</div>
-            <p>
-              <ul>
-                <li>Analyzed over 30 research papers and data sources to gather data on the spread of Parkinson’s Disease</li>  
-                <li>Visualized various trends in the spread of Parkinson’s Disease across the Globe using Tableau.</li>
-                <li>Determined various factors directly or indirectly affecting the disease.</li>
-              </ul>
-              </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    {% endfor %}
+
 </div>
 <div class="section">
   <div class="container cc-education">
@@ -248,7 +201,6 @@
                 <div class="col-md-6">
                   <div class="card-body">
                     <form action="/sendemail/" method="POST">
-                      <div class="p pb-3"><strong>Feel free to contact me </strong></div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
@@ -291,11 +243,11 @@
                 <div class="col-md-6">
                   <div class="card-body">
                     <p class="mb-0"><strong>Address </strong></p>
-                    <p class="pb-2">235 Hudson Street, Unit 1202, Hoboken, New Jersey, 07030</p>
+                    <p class="pb-2">{{ street }} <br> {{ city }}, {{ state }} {{ zipcode }}</p>
                     <p class="mb-0"><strong>Phone</strong></p>
-                    <p class="pb-2">+1646-577-8976</p>
+                    <p class="pb-2">{{ phone }}</p>
                     <p class="mb-0"><strong>Email</strong></p>
-                    <p>akalla@stevens.edu</p>
+                    <p>{{ email }}</p>
                   </div>
                 </div>
               </div>
@@ -309,7 +261,7 @@
     </div>
     <footer class="footer">
       <div class="container text-center"><a class="cc-instagram btn btn-link" target="_blank" href={{linked_in}}><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a></div>
-      <div class="h4 title text-center">Connor Rubin</div>
+      <div class="h4 title text-center">{{ name }}</div>
       <div class="text-center text-muted">
         <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
       </div>
