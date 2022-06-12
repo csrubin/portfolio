@@ -1,0 +1,23 @@
+school = "The Ohio State University"
+degree = "Bachelor of Science"
+major = "B.S. Electrical Engineering with Honors"
+minor = "Environment, Economy, Development, and Sustainability (EEDS)"
+gpa = 3.59
+start = 2015
+end = 2019
+relevant_coursework = [
+    "course1",
+    "course2"
+]
+
+projects = [
+    "Autonomous \"Spaceport\" Robot",
+    "Model LIDAR Autonomous Vehicle (Smart City)",
+    "Alexa Universal Remote",
+    "Resident Check-In Device"
+]
+
+activities = [
+    "Electronics Club (President)",
+    "OHI/O Make-a-thon (Chairman)"
+]

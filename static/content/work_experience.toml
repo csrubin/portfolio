@@ -3,12 +3,12 @@ company = "Superpedestrian"
 title = "Product Manager"
 start = 2021-06-01
 end = 2022-02-17
-departments = ['Embedded Systems', 'R&D', 'AI/ML']
+departments = ["Embedded Systems", "R&D", "AI/ML"]
 work_items = [
-    'Specified, planned, and prioritized work across three independent teams (Research & Development, Embedded Systems, Embedded Test) to integrate new technology and bring to market',
-    'Translated problem statements from operations teams into feature specifications',
-    'Communicated critical technical topics to non-technical teams throughout the organization',
-    'Scoped and scheduled engineering feature development to support high profile technology demos',
+    "Specified, planned, and prioritized work across three independent teams (Research & Development, Embedded Systems, Embedded Test) to integrate new technology and bring to market",
+    "Translated problem statements from operations teams into feature specifications",
+    "Communicated critical technical topics to non-technical teams throughout the organization",
+    "Scoped and scheduled engineering feature development to support high profile technology demos",
     "Introduced documentation and process for feature development",
     "Managed new team integration to company post-acquisition (acquired R&D department)",
     "Groomed software task backlog and specified new work specifically in support of cross-team integration",
@@ -24,7 +24,7 @@ company = "Superpedestrian"
 title = "Embedded Systems Test Engineer"
 start = 2020-02-17
 end = 2021-06-01
-departments = ['Embedded Systems']
+departments = ["Embedded Systems"]
 work_items = [
     "Developed and maintained hardware-in-the-loop test fixture and software tests for smart LEV platform" ,
     "Built document-based manufacturing test database and supporting ETL processes" ,
@@ -32,7 +32,7 @@ work_items = [
     "Designed and specified manufacturing test fixture to support offline firmware updates during final assembly",
     "Streamlined communications and troubleshot manufacturing issues with partners in China"
 ]
-key_achievements = 'Increased fault injection and stability test coverage by over 10x. Improved throughput of electronics manufacturing line by 35% through cycle time reduction analysis using test database.'
+key_achievements = "Increased fault injection and stability test coverage by over 10x. Improved throughput of electronics manufacturing line by 35% through cycle time reduction analysis using test database."
 
 ["Technical Sales Intern"]
 company = "Keyence America"

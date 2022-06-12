@@ -7,25 +7,19 @@ import os
 from helper import get_text_from_file, get_experience
 
 # File Paths
-contact_path = "static/content/contact.txt"
 about_path = "static/content/about.toml"
+education_path = "static/content/education.toml"
+experience_path = "static/content/work_experience.toml"
+
 programming_path = "static/content/programming_skills.txt"
 engineering_path = "static/content/engineering_skills.txt"
 other_path = "static/content/other_skills.txt"
-experience_path = "static/content/work_experience.toml"
 
-with open(about_path, 'r') as ct:
-    about = toml.load(ct)
-    name = about.get('name')
-    title = about.get('title')
-    about_me = about.get('about_me')
-    street = about.get('street')
-    city = about.get('city')
-    state = about.get('state')
-    zipcode = about.get('zipcode')
-    email = about.get('email')
-    phone = about.get('phone')
-    address = street + ', ' + city + ', ' + state + ' ' + zipcode
+with open(about_path, 'r') as tomlfile:
+    about = toml.load(tomlfile)
+
+with open(education_path, 'r') as tomlfile:
+    edu = toml.load(tomlfile)
 
 DEBUG = (os.getenv('DEBUG', 'False') == 'True')
 
@@ -42,24 +36,25 @@ def index():
     experience = get_experience(experience_path)
 
     return render_template("index.html",
-                           name=name,
-                           title=title,
-                           about_me=about_me,
-                           email=email,
-                           phone=phone,
-                           street=street,
-                           city=city,
-                           state=state,
-                           zipcode=zipcode,
-                           address=address,
+                           about=about,
+                           edu=edu,
+                           experience=experience,
                            programming_skills=programming_skills,
                            engineering_skills=engineering_skills,
-                           other_skills=other_skills,
-                           experience=experience,
-                           linked_in=about.get('linked_in'))
+                           other_skills=other_skills)
 
 
-@app.route("/send-email/", methods=['POST'])
+@app.route("/header")
+def header():
+    return render_template("header.html")
+
+
+@app.route("/more-experience")
+def more_experience():
+    return "MORE EXPERIENCE"
+
+
+@app.route("/contact", methods=['POST'])
 def send_email():
     if request.method == "POST":
         name = request.form['name']
@@ -69,7 +64,7 @@ def send_email():
 
         your_name = about.get('name')
         your_email = about.get('email')
-        your_password = os.getenv('EMAIL_PASSWORD')  # TODO Hide password in config
+        your_password = os.getenv('GMAIL_APP_PASSWORD')  # TODO Hide password in config
 
         # Logging in to our email account
         server = smtplib.SMTP('smtp.gmail.com', 587)

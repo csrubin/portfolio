@@ -1960,17 +1960,19 @@ fieldset[disabled] a.btn {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff
+    hover:
 }
 
 .btn-primary:hover {
-    color: #fff;
+    color: #ffff;
     background-color: #0069d9;
-    border-color: #0062cc
+    border-color: #0062cc;
 }
 
-.btn-primary.focus,
+
+.btn-primary.focus
 .btn-primary:focus {
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, .5)
+    box-shadow: 0 0 10 10px rgba(0, 123, 255, .5)
 }
 
 .btn-primary.disabled,
@@ -1979,8 +1981,8 @@ fieldset[disabled] a.btn {
     border-color: #007bff
 }
 
-.btn-primary.active,
-.btn-primary:active,
+.btn-primary.active
+
 .show>.btn-primary.dropdown-toggle {
     background-color: #0069d9;
     background-image: none;

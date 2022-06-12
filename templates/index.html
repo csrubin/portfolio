@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ name }}</title>
+    <title>{{ about['name'] }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/static/css/font-awesome.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
   <body id="top">
     <header>
       <div class="profile-page sidebar-collapse">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary">
           <div class="container">
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
             </div>
@@ -50,13 +50,13 @@
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="static/images/profile.png" alt="Image"/></a></div>
-          <div class="h2 title">{{ name }}</div>
-          <p class="category text-white">{{ title }}</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='Rubin_Connor_4_25_2022.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <div class="h2 title">{{ about['name'] }}</div>
+          <p class="category text-white">{{ about['title'] }}</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='Rubin_Connor_4_25_2022.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
         </div>
       </div>
       <div class="section">
         <div class="container">
-          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href={{linked_in}} rel="tooltip" title="Connect with me on LinkedIn"><i class="fa fa-linkedin"></i></a></div>
+          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href={{about['linked_in']}} rel="tooltip" title="Connect with me on LinkedIn"><i class="fa fa-linkedin"></i></a></div>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">About Me</div>
-            <p>{{ about_me }} </p>
+            <p>{{ about['about_me'] }} </p>
             </div>
         </div>
         <div class="col-lg-6 col-md-12">
@@ -77,15 +77,15 @@
             <div class="h4 mt-0 title">Basic Information</div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">{{ email }}</div>
+              <div class="col-sm-8">{{ about['email'] }}</div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-              <div class="col-sm-8">{{ phone }}</div>
+              <div class="col-sm-8">{{ about['phone'] }}</div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
-              <div class="col-sm-8">{{ address }}</div>
+              <div class="col-sm-8">{{ about['address'] }}</div>
             </div>
             </div>
           </div>
@@ -133,8 +133,12 @@
       </div>
     </div>
     {% endfor %}
-
+    <div class="h4 text-center mb-4 title">
+      <a href={{url_for('more_experience')}} class="btn btn-primary">More Experience</a>
+    </div>
 </div>
+
+
 <div class="section">
   <div class="container cc-education">
     <div class="h4 text-center mb-4 title">Education</div>
@@ -142,54 +146,31 @@
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <p>2018 - 2020</p>
-            <div class="h5">Master's Degree</div>
+            <p>{{ edu['start'] }} - {{ edu['end'] }}</p>
+            <div class="h5"> {{ edu['degree'] }}</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">M.S. in Information Systems</div>
-            <p class="category">STEVENS INSTITUTE OF TECHNOLOGY</p>
-            <p>Relevant Coursework: Web Mining, Knowledge Discovery in Databases, Marketing Analytics</p>
-            <p>
+            <div class="h5">{{ edu['major'] }}</div>
+            <p class="category">{{ edu['school'] }}</p>
+            <p>Relevant Coursework: {{ ', '.join(edu['relevant_coursework']) }}</p>
               <b>Projects:</b><br>
               <ul>
-              <li>Human Trafficking Knowledge Graph - A knowledge graph generating project that helped identify over 100 cases of 
-              Human Trafficking around NYC. Judged as the best solution for the competition.</li>
-              <li>Hate Comment Detector – A flask powered website to automatically filter hate comments from Twitter and Live News using 
-              Logistic Regression algorithm.</li>
+                {% for project in edu['projects'] %}
+                <li>{{ project }}</li>
+                {% endfor %}
             </ul>
-          </p>
+              <b>Activities:</b><br>
+              <ul>
+                {% for activity in edu['activities'] %}
+                <li>{{ activity }}</li>
+                {% endfor %}
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2014 - 2018</p>
-            <div class="h5">Bachelor's Degree</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">B.Tech in Information Technology</div>
-            <p class="category">UNIVERSITY OF MUMBAI</p>
-            <p>Relevant Coursework: Web Development, Advanced Database Management Systems, Object Oriented Programming, Data Mining 
-              and Business Intelligence</p>
-            <p>
-              <b>Projects:</b><br>
-              <ul>
-              <li>AutoPlay - A Machine Learning model to predict the outcome of a cricket game beforehand, based on the past records 
-                and performances.</li>
-            </ul>
-          </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
 
 <div class="section" id="contact">
   <div class="cc-contact-information" style="background-image: url('static/images/map.JPG')">
@@ -198,11 +179,11 @@
         <div class="row">
           <div class="col-md-9">
             <div class="card mb-0" data-aos="zoom-in">
-              <div class="h4 text-center title">Contact Me</div>
+              <div class="h4 text-center title">Contact</div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="card-body">
-                    <form action="/sendemail/" method="POST">
+                    <form action="/contact" method="POST">
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
@@ -233,10 +214,7 @@
                       </div>
                       <div class="row">
                         <div class="col">
-                    
                             <button class="btn btn-primary" type="submit">Send</button>
-                        
-                         
                         </div>
                       </div>
                     </form>
@@ -244,12 +222,12 @@
                 </div>
                 <div class="col-md-6">
                   <div class="card-body">
-                    <p class="mb-0"><strong>Address </strong></p>
-                    <p class="pb-2">{{ street }} <br> {{ city }}, {{ state }} {{ zipcode }}</p>
+                    <p class="mb-0"><strong>Address</strong></p>
+                    <p class="pb-2">{{ about['street'] }} <br> {{ about['city'] }}, {{ about['state'] }} {{ about['zipcode'] }}</p>
                     <p class="mb-0"><strong>Phone</strong></p>
-                    <p class="pb-2">{{ phone }}</p>
+                    <p class="pb-2">{{ about['phone'] }}</p>
                     <p class="mb-0"><strong>Email</strong></p>
-                    <p>{{ email }}</p>
+                    <p>{{ about['email'] }}</p>
                   </div>
                 </div>
               </div>
