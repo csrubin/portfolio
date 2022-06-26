@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_from_directory
 import smtplib
 from email.message import EmailMessage
 import toml
@@ -23,7 +23,6 @@ with open(education_path, 'r') as tomlfile:
 
 DEBUG = (os.getenv('DEBUG', 'False') == 'True')
 
-research_link = "https://ieeexplore.ieee.org/document/9000312"  # Todo upload to site
 
 app = Flask(__name__)
 
@@ -52,6 +51,11 @@ def header():
 @app.route("/more-experience")
 def more_experience():
     return "MORE EXPERIENCE"
+
+
+@app.route('/personal')
+def personal():
+    return "PERSONAL"
 
 
 @app.route("/contact", methods=['POST'])
@@ -90,6 +94,11 @@ def send_email():
             pass
     return redirect('/')
 
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
     app.run(debug=DEBUG)

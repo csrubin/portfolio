@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ about['name'] }}</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/static/css/font-awesome.min.css" rel="stylesheet">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/aos.css') }}">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+    <link rel= "icon" type= "image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 
     <noscript>
       <style type="text/css">
@@ -21,48 +23,61 @@
       </style>
     </noscript>
   </head>
+
   <body id="top">
+
     <header>
       <div class="profile-page sidebar-collapse">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary">
+        <nav class="navbar navbar-expand-lg fixed-top bg-primary">
           <div class="container">
-              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#personal">Personal</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
-              </ul>
-            </div>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="navbar-nav" >
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#personal">Personal</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+            </ul>
+          </div>
         </nav>
       </div>
     </header>
-    <div class="page-content">
-      <div>
+
 <div class="profile-page">
   <div class="wrapper">
     <div class="page-header page-header-small">
       <div class="page-header-image" data-parallax="true" style="background-image: url('static/images/banner.jpeg')"></div>
+
       <div class="container">
         <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="static/images/profile.png" alt="Image"/></a></div>
+          <div class="cc-profile-image">
+            <a href="#"><img src="{{ url_for('static', filename='images/profile.png') }}" alt="Image"/></a>
+          </div>
           <div class="h2 title">{{ about['name'] }}</div>
-          <p class="category text-white">{{ about['title'] }}</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" target="_blank" href="{{ url_for('static',filename='Rubin_Connor_4_25_2022.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <p class="category text-white">{{ about['title'] }}</p>
+          <a class="btn btn-primary smooth-scroll" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a>
+          <a class="btn btn-primary" target="_blank" href="{{ url_for('static', filename='content/Rubin_Connor_4_25_2022.pdf') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <a class="btn btn-primary" href="{{ url_for('personal') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Personal</a>
         </div>
       </div>
+
       <div class="section">
         <div class="container">
-          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" target="_blank" href={{about['linked_in']}} rel="tooltip" title="Connect with me on LinkedIn"><i class="fa fa-linkedin"></i></a></div>
+          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon mb-5" target="_blank" href={{about['linked_in']}} rel="tooltip" title="Connect with me on LinkedIn"><i class="fa fa-linkedin"></i></a></div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="section" id="about">
+
+<div class="section" id="about" style="padding-top:70px">
   <div class="container">
     <div class="card" data-aos="fade-up" data-aos-offset="10">
       <div class="row">
@@ -94,9 +109,23 @@
     </div>
   </div>
 </div>
+
 <div class="section" id="skill">
   <div class="container">
-    <div class="h4 text-center mb-4 title">Professional Skills</div>
+    <div class="h3 text-center mb-4 title">Professional Skills</div>
+    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+      <div class="card-title h5 text-center m-4 title">Programming and Data Wrangling</div>
+      <div class="card-body h4 px-5">
+        {{ programming_skills }} <br><br>
+      </div>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+      <div class="card-body">
+        <b>Programming:</b> {{ programming_skills }} <br><br>
+        <b>Engineering:</b> {{ engineering_skills}}<br><br>
+        <b>Other:</b> {{ other_skills }}<br><br>
+      </div>
+    </div>
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
         <b>Programming:</b> {{ programming_skills }} <br><br>
@@ -128,6 +157,18 @@
                 {% endfor %}
               </ul>
             <p> <b>Key Achievement(s): </b> {{ exp['key_achievements'] }}</p>
+            {% if exp.get('link') %}
+            <div class="container text-center">
+              <div class="row">
+                <div class="col-m-3">
+                  <a href="{{ exp['link'] }}" class="btn btn-primary" target="_blank"> Link </a>
+                </div>
+                <div class="col-2">
+                  <a href="{{ exp['file'] }}" class="btn btn-primary" target="_blank">Download</a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
           </div>
         </div>
       </div>

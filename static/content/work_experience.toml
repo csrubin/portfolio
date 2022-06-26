@@ -56,6 +56,9 @@ work_items = [
     "Designed testbed for real-time cyber-attack analysis and defense strategy development",
 ]
 key_achievements = "Resultant research published by IEEE via the North American Power Symposium."
+link = "https://ieeexplore.ieee.org/document/9000312"
+file = "/static/content/NAPS2019_paper_15.pdf"
+
 
 ["Product Development Intern"]
 company = "Tech4Imaging"
