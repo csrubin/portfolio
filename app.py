@@ -1,61 +1,58 @@
-from flask import Flask, render_template, request, redirect, send_from_directory
+from flask import Flask, render_template, request, redirect, send_from_directory, send_file
 import smtplib
 from email.message import EmailMessage
 import toml
 import os
+import datetime
 
-from helper import get_text_from_file, get_experience
+# Flask instance
+app = Flask(__name__)
+
+# Environment vars to differentiate between local/testing/production
+DEBUG = (os.getenv('DEBUG', 'False') == 'True')
 
 # File Paths
 about_path = "static/content/about.toml"
 education_path = "static/content/education.toml"
 experience_path = "static/content/work_experience.toml"
+skill_path = "static/content/skills.toml"
 
-programming_path = "static/content/programming_skills.txt"
-engineering_path = "static/content/engineering_skills.txt"
-other_path = "static/content/other_skills.txt"
-
+# Read in data to apply to templates
 with open(about_path, 'r') as tomlfile:
     about = toml.load(tomlfile)
 
 with open(education_path, 'r') as tomlfile:
     edu = toml.load(tomlfile)
 
-DEBUG = (os.getenv('DEBUG', 'False') == 'True')
+with open(skill_path, 'r') as tomlfile:
+    skills = toml.load(tomlfile)
 
+with open(experience_path, 'r') as tomlfile:
+    exp_dict = toml.load(tomlfile)
 
-app = Flask(__name__)
+    experience = []
+    for exp in exp_dict.values():
+        experience.append(exp)
+
+    experience.sort(key=lambda e: e['end'], reverse=True)
 
 
 @app.route("/")
 def index():
-    programming_skills = get_text_from_file(programming_path, as_list=True)
-    engineering_skills = get_text_from_file(engineering_path, as_list=True)
-    other_skills = get_text_from_file(other_path, as_list=True)
-    experience = get_experience(experience_path)
-
-    return render_template("index.html",
+    return render_template("homepage.html",
+                           title="Connor Rubin - Home",
                            about=about,
                            edu=edu,
                            experience=experience,
-                           programming_skills=programming_skills,
-                           engineering_skills=engineering_skills,
-                           other_skills=other_skills)
+                           skills=skills)
 
 
-@app.route("/header")
-def header():
-    return render_template("header.html")
-
-
-@app.route("/more-experience")
-def more_experience():
-    return "MORE EXPERIENCE"
-
-
-@app.route('/personal')
-def personal():
-    return "PERSONAL"
+@app.route("/resume")
+def download_resume():
+    date = datetime.date.today()
+    return send_file('static/content/resume.pdf',
+                     mimetype='application/pdf',
+                     attachment_filename=f"Rubin_Connor_{date.year}-{date.month}-{date.day}.pdf")
 
 
 @app.route("/contact", methods=['POST'])
@@ -68,7 +65,7 @@ def send_email():
 
         your_name = about.get('name')
         your_email = about.get('email')
-        your_password = os.getenv('GMAIL_APP_PASSWORD')  # TODO Hide password in config
+        your_password = os.getenv('GMAIL_APP_PASSWORD')  # TODO Hide password in config -- add to heroku config
 
         # Logging in to our email account
         server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -98,7 +95,30 @@ def send_email():
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+                               'favicon.ico',
+                               mimetype='image/vnd.microsoft.icon')
+
+
+# Placeholder routes #
+@app.route("/export-resume")
+def export_resume():
+    return "RESUME"
+
+
+@app.route("/export-cv")
+def export_cv():
+    return "CV"
+
+
+@app.route("/more-experience")
+def more_experience():
+    return "MORE EXPERIENCE"
+
+
+@app.route('/personal')
+def personal():
+    return "PERSONAL"
+
 
 if __name__ == "__main__":
     app.run(debug=DEBUG)

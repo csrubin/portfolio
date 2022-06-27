@@ -1,0 +1,60 @@
+product_project = [
+    "Jira",
+    "Confluence",
+    "Agile/Scrum",
+    "Feature definition",
+    "Business case development",
+    "Project management",
+    "Scoping and Prioritization",
+    "Technical documentation",
+    "Expectation management and work prioritization across various customers with competing interests"
+]
+
+programming = [
+    "Python",
+    "Bash",
+    "C/C++",
+    "MATLAB",
+    "Git/Github",
+    "Jenkins",
+    "CI/CD",
+    "Scripting",
+    "OOP",
+    "Data manipulation (exploration, analysis, visualization)",
+    "ETL",
+    "SQL",
+    "MongoDB",
+    "Pandas",
+    "Numpy",
+    "Dash",
+    "Dask",
+]
+engineering = [
+    "Prototyping",
+    "Multimeter",
+    "Oscilloscope",
+    "Soldering",
+    "Microcontrollers",
+    "I2C",
+    "SPI",
+    "UART",
+    "WiFi",
+    "MQTT",
+    "GPS/GNSS",
+    "IMU",
+    "Sensor Fusion",
+    "SolidWorks",
+    "Fusion360",
+    "LabVIEW"
+]
+
+
+
+languages_packages = [
+
+]
+
+technologies = [
+
+]
+
