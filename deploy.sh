@@ -7,6 +7,8 @@ pip list --format=freeze
 # Git operations
 read -p "Commit message": message
 git add ./*
+git add *
+
 git commit -m "$message"
 
 # Deploy to Heroku

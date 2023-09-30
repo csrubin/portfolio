@@ -58,7 +58,7 @@
           <div class="container">
             <div class="content-center">
               <div class="cc-profile-image">
-                <a href="#"><img src="{{ url_for('static', filename='images/profile.png') }}" alt="Image"/></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/profile.jpeg') }}" alt="Image"/></a>
               </div>
               <div class="h2 title">{{ about['name'] }}</div>
               <p class="category text-white">{{ about['title'] }}</p>
@@ -188,8 +188,8 @@
           <div class="row">
             <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
               <div class="card-body cc-education-header">
-                <p>{{ edu['start'] }} - {{ edu['end'] }}</p>
                 <div class="h5"> {{ edu['degree'] }}</div>
+                <p>{{ edu['start'] }} - {{ edu['end'] }}</p>
               </div>
             </div>
             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">

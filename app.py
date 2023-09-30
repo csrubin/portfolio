@@ -40,7 +40,7 @@ with open(experience_path, 'r') as tomlfile:
 @app.route("/")
 def index():
     return render_template("homepage.html",
-                           title="Connor Rubin - Home",
+                           title=f"{about['name']} - Home",
                            about=about,
                            edu=edu,
                            experience=experience,
@@ -52,7 +52,7 @@ def download_resume():
     date = datetime.date.today()
     return send_file('static/content/resume.pdf',
                      mimetype='application/pdf',
-                     attachment_filename=f"Rubin_Connor_{date.year}-{date.month}-{date.day}.pdf")
+                     download_name=f"Rubin_Connor_{date.year}-{date.month}-{date.day}.pdf")
 
 
 @app.route("/contact", methods=['POST'])
@@ -68,21 +68,26 @@ def send_email():
         your_password = os.getenv('GMAIL_APP_PASSWORD')  # TODO Hide password in config -- add to heroku config
 
         # Logging in to our email account
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.ehlo()
-        server.starttls()
-        server.login(your_email, your_password)
+        try:
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.ehlo()
+            server.starttls()
+            server.login(your_email, your_password)
 
-        # Sender's and Receiver's email address
-        sender_email = "csrubin+portfolio-contact@gmail.com"
-        receiver_email = "csrubin@gmail.com"
+            # Sender's and Receiver's email address
+            sender_email = "csrubin+portfolio-contact@gmail.com"
+            receiver_email = "csrubin@gmail.com"
 
-        msg = EmailMessage()
-        msg.set_content("First Name : " + str(name) + "\nEmail : " + str(email) + "\nSubject : " + str(
-            subject) + "\nMessage : " + str(message))
-        msg['Subject'] = 'New Response on Personal Website'
-        msg['From'] = sender_email
-        msg['To'] = receiver_email
+            msg = EmailMessage()
+            msg.set_content("First Name : " + str(name) + "\nEmail : " + str(email) + "\nSubject : " + str(
+                subject) + "\nMessage : " + str(message))
+            msg['Subject'] = 'New Response on Personal Website'
+            msg['From'] = sender_email
+            msg['To'] = receiver_email
+
+        except:
+            pass
+        redirect('/')
         # Send the message via our own SMTP server.
         try:
             # sending an email
@@ -100,24 +105,21 @@ def favicon():
 
 
 # Placeholder routes #
-@app.route("/export-resume")
-def export_resume():
-    return "RESUME"
-
-
-@app.route("/export-cv")
-def export_cv():
-    return "CV"
-
-
-@app.route("/more-experience")
-def more_experience():
+@app.route("/work-history")
+def work_history():
     return "MORE EXPERIENCE"
 
 
 @app.route('/personal')
 def personal():
     return "PERSONAL"
+
+
+@app.route('/projects')
+def projects():
+    return render_template("project.html",
+                           title=f"{about['name']} - Projects",
+                           about=about)
 
 
 if __name__ == "__main__":

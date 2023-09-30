@@ -1,10 +1,10 @@
 school = "The Ohio State University"
 degree = "Bachelor of Science"
-major = "B.S. Electrical Engineering with Honors"
+major = "Electrical Engineering with Honors"
 minor = "Environment, Economy, Development, and Sustainability (EEDS)"
 gpa = 3.59
-start = 2015
-end = 2019
+start = 2015-08-24
+end = 2019-12-15
 relevant_coursework = [
     "course1",
     "course2"

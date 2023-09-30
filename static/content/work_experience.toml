@@ -1,49 +1,48 @@
 ["Product Manager"]
 company = "Superpedestrian"
-title = "Product Manager"
-start = 2021-06-01
+title = "Technical Product Manager"
+start = 2021-04-01
 end = 2022-02-17
 departments = ["Embedded Systems", "R&D", "AI/ML"]
 work_items = [
-    "Specified, planned, and prioritized work across three independent teams (Research & Development, Embedded Systems, Embedded Test) to integrate new technology and bring to market",
-    "Translated problem statements from operations teams into feature specifications",
-    "Communicated critical technical topics to non-technical teams throughout the organization",
-    "Scoped and scheduled engineering feature development to support high profile technology demos",
-    "Introduced documentation and process for feature development",
-    "Managed new team integration to company post-acquisition (acquired R&D department)",
-    "Groomed software task backlog and specified new work specifically in support of cross-team integration",
-    "Continued improvement of test report generation and analytics"
+    """Specified, prioritized, and scheduled work across three teams to deliver a cross-functional new piece of technology
+        which integrated proof-of-concept research into existing intelligent vehicle platform to support high-profile demos""",
+    """Led new product introduction process of high accuracy location technology from company partner acquisition
+        through system integration, resulting in winning high-value permit to operate in Chicago, IL.""",
+    """Translated problem statements from operations teams into feature specifications such that engineering teams
+        were able to ship critical efficiency and reliability improvements in a timely manner""",
+    """Communicated highly technical topics to non-technical teams to improve accuracy and clarity of marketing materials
+        and technological expectations to external organizations""",
 ]
-key_achievements = """Led entire new product introduction process of high accuracy location technology for LEVs
-(from company partner acquisition through system integration and launch). Directed technology demo, resulting in
-winning high-value permit to operate in Chicago, IL. Standardized new feature integration process across hardware
-and software teams."""
 
 ["Test Engineer"]
 company = "Superpedestrian"
 title = "Embedded Systems Test Engineer"
 start = 2020-02-17
-end = 2021-06-01
+end = 2021-04-01
 departments = ["Embedded Systems"]
 work_items = [
-    "Developed and maintained hardware-in-the-loop test fixture and software tests for smart LEV platform" ,
-    "Built document-based manufacturing test database and supporting ETL processes" ,
-    "Managed vehicle firmware release process (performance testing and validation, engineering change orders, etc.)",
-    "Designed and specified manufacturing test fixture to support offline firmware updates during final assembly",
-    "Streamlined communications and troubleshot manufacturing issues with partners in China"
+    """Developed hardware-in-the-loop (HIL) fixture and software tests for vehicle platform thereby increasing fault
+       injection and stability test coverage by over 10x and reducing number of bugs released to the field""",
+    """Built manufacturing test log database, data pipeline, and tooling from scratch resulting 35% cycle time reduction on
+       manufacturing line, amongst many other use-cases""",
+    """Designed and specified manufacturing test fixture that enabled offline firmware updates during final assembly to
+       streamline communications and troubleshooting processes with manufacturing partners in China""",
+    """Managed vehicle firmware release process that included performance field testing and validation, engineering
+       hange order documentation, and education of operations teams on feature set changes""",
 ]
-key_achievements = "Increased fault injection and stability test coverage by over 10x. Improved throughput of electronics manufacturing line by 35% through cycle time reduction analysis using test database."
 
 ["Technical Sales Intern"]
 company = "Keyence America"
-title = "Sales Engineer (Intern)"
+title = "Technical Sales Intern"
 start = 2019-06-01
 end = 2019-08-05
 work_items = [
-    "Generated 30+ sales leads on a range of highly technical industrial automation products using a proprietary customer relationship management system",
-    "Assisted sales engineers during various in-person sales calls/product demonstrations"
+    """Generated 30+ sales leads for technical industrial automation products using a proprietary customer relationship
+       management (CRM) system resulting in over $120,000 in sales for vision-based sensors and laser markers""",
+    """Assisted sales engineers during various in-person sales calls, product demonstrations, and technical support for
+       high precision measurement tooling"""
 ]
-key_achievements = "Triggered over $120,000 in sales for vision-based sensors and laser markers."
 
 ["Undergraduate Researcher"]
 company = "The Ohio State University"
@@ -52,24 +51,38 @@ start = 2018-06-01
 end = 2018-08-25
 departments = ["Center for High Performance Power Electronics"]
 work_items = [
-    "Directed undergraduate research team in developing a cyber-physical power grid testbed",
-    "Designed testbed for real-time cyber-attack analysis and defense strategy development",
+    """Directed undergraduate research team in designing and building a real-time cyber-physical power grid testbed for
+       cyber attack analysis and defense strategy development""",
+    """Published “A Cyber-Physical Testbed Design for the Electric Power Grid” research paper in IEEE Xplore via the North
+       American Power Symposium"""
 ]
-key_achievements = "Resultant research published by IEEE via the North American Power Symposium."
 link = "https://ieeexplore.ieee.org/document/9000312"
 file = "/static/content/NAPS2019_paper_15.pdf"
 
 
 ["Product Development Intern"]
 company = "Tech4Imaging"
-title = "Product Development Engineer (Intern)"
+title = "Product Development Engineering Intern"
 start = 2017-09-01
 end = 2017-11-22
 work_items = [
-    "Designed and operated test equipment for novel 3D imaging/nondestructive testing technology",
-    "Furthered multi-phase mass-flow meter based on ‘electrical capacitance volume tomography",
+    """Designed and operated test equipment for novel 3D imaging technology (electrical capacitance volume
+       tomography) technology for use in non-destructive testing and multi-phase mass flow measurement""",
+    "Conducted various experiments determining empirical relationship between capacitance and liquid volume",
     "Modified plumbing system to incorporate stratified flow into a multiphase flow loop for testing"
 ]
 
-key_achievements = "Determined empirical relationship between capacitance and liquid volume."
 
+["Infra-Engineering Intern"]
+company = "GE Aviation"
+title = "Engineering Intern"
+start = 2017-01-07
+end = 2017-05-18
+work_items = [
+    """Mapped value stream of aircraft electronics component to identify and implement cycle time reduction methods, resulting in time savings of $1000 per cycle of medium volume product""",
+    """Redesigned facility floor plan according to Lean manufacturing principles to improve efficiency by removing need
+       for products to traverse a large facility multiple times during assembly and test""",
+    "Improved generator electronics work instructions based on engineering change orders",
+    "Inspected and logged nonconforming electronic components",
+    "Developed user interface and basic code for a aircraft generator miscommunication detector"
+]
