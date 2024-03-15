@@ -1,80 +1,102 @@
-["Product Manager"]
+["Product Manager, Hubs"]
+company = "DroneUp"
+company_link = "https://www.droneup.com"
+title = "Product Manager"
+start = 2022-08-12
+end = 2024-03-01
+departments = ["Ground Infrastructure", "Hardware"]
+work_items = [
+    "Drove aircraft hardware modification projects to improve delivery package stability and dropoff success, resulting in a 50% increase in delivery success rate",
+    "Developed discrete-event simulation environment using Python with GUI to better understand drone delivery operations at scale,thus enabling key decision-making without costly investment and experimentation",
+    "Created and implemented team structure, standards, and best practices for a new team"
+]
+key_achievement = """
+Defined requirements and coordinated work between design agencies and vendors to develop
+automated UAV takeoff and conveyance system to improve throughput for drone-based operations
+"""
+
+["Product Manager, Embedded Systems"]
 company = "Superpedestrian"
+company_link = "https://www.superpedestrian.com"
 title = "Technical Product Manager"
 start = 2021-04-01
 end = 2022-02-17
 departments = ["Embedded Systems", "R&D", "AI/ML"]
 work_items = [
-    """Specified, prioritized, and scheduled work across three teams to deliver a cross-functional new piece of technology
-        which integrated proof-of-concept research into existing intelligent vehicle platform to support high-profile demos""",
-    """Led new product introduction process of high accuracy location technology from company partner acquisition
-        through system integration, resulting in winning high-value permit to operate in Chicago, IL.""",
-    """Translated problem statements from operations teams into feature specifications such that engineering teams
-        were able to ship critical efficiency and reliability improvements in a timely manner""",
-    """Communicated highly technical topics to non-technical teams to improve accuracy and clarity of marketing materials
-        and technological expectations to external organizations""",
+    "Translated problem statements from operations teams into feature specifications,thereby improving vehicle downtime and profit margins by 30%",
+    "Communicated complex topics to non-technical teams to improve accuracy and clarity of marketing materials and technological expectations to external stakeholders and internal partners"
 ]
+key_achievement = """
+Integrated sensor-fusion technology into intelligent vehicle platform to deliver high-precision,
+low-cost localization technology, resulting in winning high-value permit to operate in Chicago, IL
+"""
 
 ["Test Engineer"]
 company = "Superpedestrian"
+company_link = "https://www.superpedestrian.com"
 title = "Embedded Systems Test Engineer"
 start = 2020-02-17
 end = 2021-04-01
 departments = ["Embedded Systems"]
 work_items = [
-    """Developed hardware-in-the-loop (HIL) fixture and software tests for vehicle platform thereby increasing fault
-       injection and stability test coverage by over 10x and reducing number of bugs released to the field""",
     """Built manufacturing test log database, data pipeline, and tooling from scratch resulting 35% cycle time reduction on
        manufacturing line, amongst many other use-cases""",
+    """Upgraded test report analytics to improve data consumption and debugging capability of engineering teams to reduce time-to-market for new features""",
     """Designed and specified manufacturing test fixture that enabled offline firmware updates during final assembly to
        streamline communications and troubleshooting processes with manufacturing partners in China""",
     """Managed vehicle firmware release process that included performance field testing and validation, engineering
        hange order documentation, and education of operations teams on feature set changes""",
 ]
+key_achievement = """Developed hardware-in-the-loop (HIL) fixture and software tests for vehicle platform,
+increasing fault injection and stability test coverage by over 10x and drastically reducing release defects"""
 
 ["Technical Sales Intern"]
 company = "Keyence America"
+link = "https://www.keyence.com"
 title = "Technical Sales Intern"
 start = 2019-06-01
 end = 2019-08-05
 work_items = [
     """Generated 30+ sales leads for technical industrial automation products using a proprietary customer relationship
-       management (CRM) system resulting in over $120,000 in sales for vision-based sensors and laser markers""",
+       management (CRM) system""",
     """Assisted sales engineers during various in-person sales calls, product demonstrations, and technical support for
        high precision measurement tooling"""
 ]
+key_achievement = """Triggered over $120,000 in sales for vision-based sensors and laser markers"""
 
 ["Undergraduate Researcher"]
-company = "The Ohio State University"
+company = "The Ohio State University, CHPPE"
+company_link = "https://ece.osu.edu/center-high-performance-power-electronics"
 title = "Lead Undergraduate Research Assistant"
 start = 2018-06-01
 end = 2018-08-25
 departments = ["Center for High Performance Power Electronics"]
 work_items = [
-    """Directed undergraduate research team in designing and building a real-time cyber-physical power grid testbed for
-       cyber attack analysis and defense strategy development""",
-    """Published “A Cyber-Physical Testbed Design for the Electric Power Grid” research paper in IEEE Xplore via the North
-       American Power Symposium"""
+    """Directed undergraduate research team in developing cyber-physical power grid testbed""",
+    """Designed testbed for cyber attack analysis and defense strategy development"""
 ]
+key_achievement = """Published “A Cyber-Physical Testbed Design for the Electric Power Grid” research paper
+                     in IEEE Xplore via the North American Power Symposium"""
 link = "https://ieeexplore.ieee.org/document/9000312"
 file = "/static/content/NAPS2019_paper_15.pdf"
 
-
 ["Product Development Intern"]
 company = "Tech4Imaging"
+company_link = "https://www.tech4imaging.com/"
 title = "Product Development Engineering Intern"
 start = 2017-09-01
 end = 2017-11-22
 work_items = [
-    """Designed and operated test equipment for novel 3D imaging technology (electrical capacitance volume
-       tomography) technology for use in non-destructive testing and multi-phase mass flow measurement""",
-    "Conducted various experiments determining empirical relationship between capacitance and liquid volume",
+    "Designed and operated test equipment for novel 3D imaging technology for use in non-destructive testing",
+    "Furthered multi-phase mass-flow meter based on ‘electrical capacitance volume tomography’",
     "Modified plumbing system to incorporate stratified flow into a multiphase flow loop for testing"
 ]
+key_achievement = """Determined empirical relationshipbetween capacitance and liquid volume"""
 
 
 ["Infra-Engineering Intern"]
 company = "GE Aviation"
+company_link = "https://www.geaerospace.com"
 title = "Engineering Intern"
 start = 2017-01-07
 end = 2017-05-18
@@ -86,3 +108,4 @@ work_items = [
     "Inspected and logged nonconforming electronic components",
     "Developed user interface and basic code for a aircraft generator miscommunication detector"
 ]
+key_achievement = """Modified work instructions to reduce cycle time by 11 hours on three separate parts."""

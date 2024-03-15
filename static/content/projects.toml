@@ -1,0 +1,81 @@
+["how2meet"]
+content_path = ""
+title = "How2Meet"
+tagline = "A zero sign-up event manager"
+type = "Web App"
+status = "In Progress"
+description = """how2meet is a frictionless event manager--meaning it is simple, free, easy to use,
+and does NOT require you or your guests to create an account or download an app."""
+link = "https://how2meet.com"
+features = []
+responsibilities = []
+acknowledgements = []
+
+["Boxdrop Camper Trailer"]
+content_path = ""
+title = "DIY Boxdrop Camper Trailer"
+status = "Done"
+description = "I made a camper yayyyyyy"
+link = ""
+features = []
+responsibilities = []
+acknowledgements = []
+
+["Soil Sensor Network"]
+content_path = ""
+title = "Mesh Soil Sensor Network"
+tagline = "Multi-node moisture sensor network for low-cost precision agriculture"
+status = "Done"
+description = """
+The soil sensor network was my capstone project, which was aimed at designing and building a prototype that would allow farmers to monitor crops remotely, and then be able to make more specific decisions, thereby increasing crop yield while reducing resource use.
+
+Three sensor “nodes” each contained a WiFi-enabled microcontroller, LoRa transmitter, soil sensor, GPS, battery, and solar panel and were bundled into a watertight enclosure. The data was collected and transmitted over the LoRa band back to a “gateway” node where the information was uploaded to a local .csv file over the internet using the MQTT protocol and python. This data was then presented and visualized in a browser using the Dash python library for easy and familiar data consumption.
+"""
+link = ""
+features = []
+responsibilities = []
+acknowledgements = []
+
+["LiDAR Car"]
+content_path = ""
+title = "Autonomous LiDAR Car"
+tagline = "A small autonomous vehicle for the Buckeyeville M.S. project"
+status = "Done"
+description = "The LIDAR Car is a small autonomous vehicle built for the Buckeyeville M.S. project headed by Dr. Lisa Fiorentini. The car is controlled by a Raspberry Pi and is equipped with a battery, LIDAR sensor, camera, and dual DC motors. My portion of the project was completed over the course of a semester, however the project is ongoing with additional features and research aspects being added gradually."
+link = ""
+features = []
+responsibilities = []
+acknowledgements = []
+
+["Spaceport Robot"]
+content_path = ""
+title = "Autonomous 'Spaceport' Robot"
+tagline = "Autonomous model robot for doing a variety of tasks around a model spaceport"
+status = "Done"
+description = "Over the course of a semester as a team of four, we constructed an autonomous robot capable of performing a variety of tasks such as navigation of a course, color recognition, picking up and placing objects, pressing buttons, etc. In addition to these tasks, there were time and budgetary constraints. In competition, we placed 10th/72 for the preliminary round, and had the third fastest robot overall with a perfect run. Scroll down for a video of a non-competition run of the robot."
+link = ""
+features = []
+responsibilities = []
+acknowledgements = []
+
+["RFID Check-In Device"]
+content_path = ""
+title = "Resident Check-In Device"
+tagline = "RFID-based check-in device to know who's home"
+status = "Done"
+description = """Affectionately referred to as “Home-Ease,” this project is a prototype for a IoT consumer electronic device for resident check-in. Using RFID chips, residents check in an out of their house and indicator lights are used to show who’s home. Additionally, residents are able to then use a companion progressive web app to see who is home, and other information. Technologies used: RFID, Raspberry Pi, Python, Javascript, PWA framework, MySQL, CSS, Twilio, 3D printing, RGB LEDs. Project won 2nd place out of 25 teams at MakeOHI/O 2018, Best Aesthetic and continued to be recognized at ShowOHI/O."""
+link = ""
+features = []
+responsibilities = []
+acknowledgements = []
+
+["Alexa Universal Remote"]
+content_path = ""
+title = "Alexa Universal Remote Assistant"
+tagline = "Voice controlled universal remote for home automation"
+status = "Done"
+description = """Alexa Universal Remote Assistant is a prototype product built over a 24-hour period at MakeOHI/O 2019. It paired an Echo Dot with an ESP8266 nodeMCU board and infrared LEDs to create a standalone, voice controlled universal remote for controlling TVs, projectors, stereos, etc. The remote is capable of powering on/off, adjusting volume, and changing inputs. This project placed 3rd overall at MakeOHI/O 2019 and won 'Best Sprint.'"""
+link = ""
+features = []
+responsibilities = []
+acknowledgements = []

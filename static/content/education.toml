@@ -1,23 +1,29 @@
 school = "The Ohio State University"
 degree = "Bachelor of Science"
-major = "Electrical Engineering with Honors"
+major = "Electrical Engineering (Control Systems), with Honors Distinction"
 minor = "Environment, Economy, Development, and Sustainability (EEDS)"
-gpa = 3.59
+gpa = 3.60
 start = 2015-08-24
 end = 2019-12-15
 relevant_coursework = [
-    "course1",
-    "course2"
+    "Real Time Robotics Systems",
+    "Powertrain Control Systems",
+    "Machine Learning for ECE",
+    "Sustainable Energy and Power Systems",
+    "Empowering the Entrepreneurial Electrical and Computer Engineer",
+    "Business and Sustainability",
 ]
 
 projects = [
+    "Precision Agriculture Mesh Sensor Network",
     "Autonomous \"Spaceport\" Robot",
     "Model LIDAR Autonomous Vehicle (Smart City)",
     "Alexa Universal Remote",
-    "Resident Check-In Device"
+    "RFID Resident Check-In Device"
 ]
 
 activities = [
     "Electronics Club (President)",
-    "OHI/O Make-a-thon (Chairman)"
+    "OHI/O Make-a-thon (Chairman)",
+    "Model Smart City Design Team"
 ]

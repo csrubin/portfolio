@@ -16,6 +16,7 @@ about_path = "static/content/about.toml"
 education_path = "static/content/education.toml"
 experience_path = "static/content/work_experience.toml"
 skill_path = "static/content/skills.toml"
+projects_path = "static/content/projects.toml"
 
 # Read in data to apply to templates
 with open(about_path, 'r') as tomlfile:
@@ -36,7 +37,14 @@ with open(experience_path, 'r') as tomlfile:
 
     experience.sort(key=lambda e: e['end'], reverse=True)
 
+with open(projects_path, 'r') as tomlfile:
+    proj_dict = toml.load(tomlfile)
+    project_list = []
+    for project in proj_dict.values():
+        project_list.append(project)
 
+
+### Rendered Pages ###
 @app.route("/")
 def index():
     return render_template("homepage.html",
@@ -47,6 +55,23 @@ def index():
                            skills=skills)
 
 
+@app.route("/work-history")
+def work_history():
+    return render_template("work_history.html",
+                           title=f"{about['name']} - Home",
+                           about=about,
+                           experience=experience)
+
+
+@app.route('/projects')
+def projects():
+    return render_template("projects.html",
+                           title=f"{about['name']} - Projects",
+                           about=about,
+                           projects=project_list)
+
+
+### Utilities ###
 @app.route("/resume")
 def download_resume():
     date = datetime.date.today()
@@ -65,7 +90,7 @@ def send_email():
 
         your_name = about.get('name')
         your_email = about.get('email')
-        your_password = os.getenv('GMAIL_APP_PASSWORD')  # TODO Hide password in config -- add to heroku config
+        your_password = os.getenv('GMAIL_APP_PASSWORD')
 
         # Logging in to our email account
         try:
@@ -81,13 +106,13 @@ def send_email():
             msg = EmailMessage()
             msg.set_content("First Name : " + str(name) + "\nEmail : " + str(email) + "\nSubject : " + str(
                 subject) + "\nMessage : " + str(message))
-            msg['Subject'] = 'New Response on Personal Website'
+            msg['Subject'] = 'New Response on Portfolio Website'
             msg['From'] = sender_email
             msg['To'] = receiver_email
 
-        except:
-            pass
-        redirect('/')
+        except Exception as e:
+            print(e)
+            redirect('/')
         # Send the message via our own SMTP server.
         try:
             # sending an email
@@ -102,24 +127,6 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico',
                                mimetype='image/vnd.microsoft.icon')
-
-
-# Placeholder routes #
-@app.route("/work-history")
-def work_history():
-    return "MORE EXPERIENCE"
-
-
-@app.route('/personal')
-def personal():
-    return "PERSONAL"
-
-
-@app.route('/projects')
-def projects():
-    return render_template("project.html",
-                           title=f"{about['name']} - Projects",
-                           about=about)
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ product_project = [
     "Project management",
     "Scoping and Prioritization",
     "Technical documentation",
-    "Expectation management and work prioritization across various customers with competing interests"
+    "Stakeholder management",
 ]
 
 programming = [

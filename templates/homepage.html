@@ -11,7 +11,7 @@
             <div class="container">
                 <div class="content-center">
                     <div class="cc-profile-image">
-                        <a href="#"><img src="{{ url_for('static', filename='images/profile.png') }}" alt="Image"/></a>
+                        <a href="/"><img src="{{ url_for('static', filename='images/profile.png') }}" alt="Image"/></a>
                     </div>
                     <div class="h2 title">{{ about['name'] }}</div>
                     <p class="category text-white">{{ about['title'] }}</p>
@@ -97,24 +97,31 @@
     <div class="section" id="experience">
         <div class="container cc-experience">
             <div class="h4 text-center mb-4 title">Work Experience</div>
-            {% for exp in experience %}
+            {% for exp in experience[:3] %}
             <div class="card">
                 <div class="row">
                     <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                         <div class="card-body cc-experience-header">
-                            <div class="h5">{{ exp['company'] }}</div>
+                            <a href="{{ exp['company_link'] }}">
+                                <div class="h5" style="text-decoration: underline; color: white">{{ exp['company'] }} </div>
+                            </a>
                             <p>{{ exp['start'].strftime("%b %Y") }} - {{ exp['end'].strftime("%b %Y") }} </p>
                         </div>
                     </div>
                     <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                         <div class="card-body">
                             <div class="h5">{{ exp['title'] }}</div>
+
+                            {% if exp.get('key_achievement') %}
+                                <p><b>Key Achievement: </b> {{ exp['key_achievement'] }}</p>
+                            {% endif %}
+
                             <ul>
                                 {% for item in exp['work_items'] %}
                                 <li>{{ item }}</li>
                                 {% endfor %}
                             </ul>
-<!--                            <p><b>Key Achievement(s): </b> {{ exp['key_achievements'] }}</p>-->
+
                             {% if exp.get('link') %}
                             <div class="container text-center">
                                 <div class="row">
@@ -153,8 +160,13 @@
                             <div class="card-body">
                                 <div class="h5">{{ edu['major'] }}</div>
                                 <p class="category">{{ edu['school'] }}</p>
-                                <b>Minor: {{ edu['minor'] }}</b><br>
-                                <p>Relevant Coursework: {{ ', '.join(edu['relevant_coursework']) }}</p>
+                                <b>Minor:</b> {{ edu['minor'] }}<br>
+                                <b>Relevant Coursework: </b><br>
+                                <ul>
+                                    {% for course in edu['relevant_coursework'] %}
+                                    <li>{{ course }}</li>
+                                    {% endfor %}
+                                </ul>
                                 <b>Projects:</b><br>
                                 <ul>
                                     {% for project in edu['projects'] %}
@@ -173,7 +185,7 @@
                 </div>
 
                 <div class="section" id="contact">
-                    <div class="cc-contact-information" style="background-image: url('static/images/map.JPG')">
+                    <div class="cc-contact-information" style="background-image: url('static/images/map-hr.png')">
                         <div class="container">
                             <div class="cc-contact">
                                 <div class="row">

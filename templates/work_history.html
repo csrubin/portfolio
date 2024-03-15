@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="work-history-page">
+    <div class="wrapper">
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true"
+                 style="background-image: url('static/images/banner.jpeg')"></div>
+
+            <div class="container">
+                <div class="content-center" style="padding: 0 0px">
+                    <div class="h2 title">{{ about['name'] }}</div>
+                    <p class="category text-white">{{ about['title'] }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section" id="experience">
+    <div class="container cc-experience">
+        <div class="h4 text-center mb-4 title">Work Experience</div>
+        {% for exp in experience %}
+        <div class="card">
+            <div class="row">
+                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                    <div class="card-body cc-experience-header">
+                        <a href="{{ exp['company_link'] }}">
+                            <div class="h5" style="text-decoration: underline; color: white">{{ exp['company'] }} </div>
+                        </a>
+                        <p>{{ exp['start'].strftime("%b %Y") }} - {{ exp['end'].strftime("%b %Y") }} </p>
+                    </div>
+                </div>
+                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                    <div class="card-body">
+                        <div class="h5">{{ exp['title'] }}</div>
+
+                        {% if exp.get('key_achievement') %}
+                            <p><b>Key Achievement: </b> {{ exp['key_achievement'] }}</p>
+                        {% endif %}
+
+                        <ul>
+                            {% for item in exp['work_items'] %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% if exp.get('link') %}
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col-m-3">
+                                    <a href="{{ exp['link'] }}" class="btn btn-primary" target="_blank"> Link </a>
+                                </div>
+                                <div class="col-2">
+                                    <a href="{{ exp['file'] }}" class="btn btn-primary" target="_blank">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="h4 text-center mb-4 title">
+            <a href={{url_for('index')}} class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

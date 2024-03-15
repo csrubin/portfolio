@@ -3583,6 +3583,12 @@ Created using IcoMoon - icomoon.io
 .profile-page .page-header {
   min-height: 550px; }
 
+.work-history-page .page-header {
+  min-height: 300px; }
+
+.projects-page .page-header {
+min-height: 300px; }
+
 .profile-page .profile-container {
   color: #FFFFFF; }
 
@@ -3790,7 +3796,7 @@ Created using IcoMoon - icomoon.io
   padding-top: 20vh; }
 
 .page-header {
-  height: 100vh;
+  height: 50vh;
   max-height: 1050px;
   padding: 0;
   color: #FFFFFF;
@@ -3827,8 +3833,8 @@ Created using IcoMoon - icomoon.io
   .page-header .description {
     color: rgba(255, 255, 255, 0.5); }
   .page-header.page-header-small {
-    height: 60vh;
-    max-height: 440px; }
+    height: 40vh;
+    max-height: 300px; }
   .page-header:after, .page-header:before {
     position: absolute;
     z-index: 0;
